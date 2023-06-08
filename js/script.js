@@ -27,33 +27,39 @@ let playerMove = getMoveName(playerInput);
 
 printMessage('Twój ruch to: ' + playerMove);
 
-if( computerMove == 'kamień' && playerMove == 'papier'){
-    printMessage('Ty wygrywasz!');
+function displayResult (argComputerMove, argPlayerMove) {
+
+if( argComputerMove == 'kamień' && argPlayerMove == 'papier'){
+   return 'Ty wygrywasz!';
   }
-else if( computerMove == 'papier' && playerMove == 'kamień'){
-    printMessage('Wygrywa komputer!');
+else if( argComputerMove == 'papier' && argPlayerMove == 'kamień'){
+   return 'Wygrywa komputer!';
   }
-else if( computerMove == 'nożyce' && playerMove == 'papier'){
-    printMessage('Wygrywa komputer!');
+else if( argComputerMove == 'nożyce' && argPlayerMove == 'papier'){
+    return 'Wygrywa komputer!';
   }
-  else if( computerMove == 'papier' && playerMove == 'nożyce'){
-    printMessage('Ty wygrywasz!');
+  else if( argComputerMove == 'papier' && argPlayerMove == 'nożyce'){
+   return 'Ty wygrywasz!';
   }
-  else if( computerMove == 'nożyce' && playerMove == 'kamień'){
-    printMessage('Ty wygrywasz!');
+  else if( argComputerMove == 'nożyce' && argPlayerMove == 'kamień'){
+   return 'Ty wygrywasz!';
   }
-  else if( computerMove == 'kamień' && playerMove == 'nożyce'){
-    printMessage('Wygrywa komputer!');
+  else if( argComputerMove == 'kamień' && argPlayerMove == 'nożyce'){
+   return 'Wygrywa komputer!';
   }
-  else if( computerMove == 'kamień' && playerMove == 'kamień'){
-    printMessage('Remis!');
+  else if( argComputerMove == 'kamień' && argPlayerMove == 'kamień'){
+   return 'Remis!';
   }
-  else if( computerMove == 'nożyce' && playerMove == 'nożyce'){
-    printMessage('Remis!');
+  else if( argComputerMove == 'nożyce' && argPlayerMove == 'nożyce'){
+   return 'Remis!';
   }
-  else if( computerMove == 'papier' && playerMove == 'papier'){
-    printMessage('Remis!');
+  else if( argComputerMove == 'papier' && argPlayerMove == 'papier'){
+   return 'Remis!';
   }
-  else if (playerMove = 'invalid input') {
-    printMessage('Nie ma oszukiwania!');
+  else if (argPlayerMove = 'invalid input') {
+    return 'Nie ma oszukiwania!';
   }
+  
+}
+let result = displayResult (computerMove, playerMove);
+printMessage('Wynik '+ result);
