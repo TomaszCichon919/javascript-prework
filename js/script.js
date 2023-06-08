@@ -67,6 +67,8 @@ function playGame(playerInput){
   }
   let result = displayResult (computerMove, playerMove);
   printMessage('Wynik '+ result);
+  
+  printResult (playerWin+ ' - '+ computerWin);
 }
 
 document.getElementById('play-rock').addEventListener('click', function(){
