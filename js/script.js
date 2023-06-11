@@ -1,6 +1,7 @@
 function playGame(playerInput){
 
   clearMessages ();
+  clearResult();
 
   let randomNumber = Math.floor(Math.random() * 3 + 1);
 
@@ -65,11 +66,32 @@ function playGame(playerInput){
     }
   
   }
+
   let result = displayResult (computerMove, playerMove);
   printMessage('Wynik '+ result);
   
-  printResult (playerWin+ ' - '+ computerWin);
+
+  
+  function winCounter (result) {
+    if (result == 'Wygrywa komputer!') {
+      return computerWin = computerWin +1;
+    }
+    else if (result == 'Ty wygrywasz!') {
+      return playerWin = playerWin +1;
+    }
+    else {console.log (result)};
+  
+  }
+  let counter =winCounter (result);
+  printResult (playerWin + ' - '+ computerWin);
+  
+  
 }
+
+let computerWin = 0;
+let playerWin = 0;
+
+
 
 document.getElementById('play-rock').addEventListener('click', function(){
   playGame(1);
@@ -82,4 +104,6 @@ document.getElementById('play-scissors').addEventListener('click', function(){
 document.getElementById('play-paper').addEventListener('click', function(){
   playGame(2);;
 });
+
+
 
