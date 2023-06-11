@@ -68,7 +68,6 @@ function playGame(playerInput){
   const result = displayResult (computerMove, playerMove);
   printMessage('Wynik '+ result);
   
-  const winCounter= function  (result) {
 
     if (result == 'Wygrywa komputer!') {
       computerWin = computerWin +1;
@@ -78,8 +77,8 @@ function playGame(playerInput){
     }
     else {console.log (result)};
   
-  }
-  winCounter (result);
+  
+ 
   printResult (playerWin + ' - '+ computerWin);
   
 }
